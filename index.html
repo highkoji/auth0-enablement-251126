@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auth0 Vanilla JS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Loading State -->
+      <div id="loading" class="loading-state">
+        <div class="loading-text">Loading...</div>
+      </div>
+
+      <!-- Error State -->
+      <div id="error" class="error-state" style="display: none;">
+        <div class="error-title">Oops!</div>
+        <div class="error-message">Something went wrong</div>
+        <div id="error-details" class="error-sub-message"></div>
+      </div>
+
+      <!-- Main Content -->
+      <div id="app" class="main-card-wrapper" style="display: none;">
+        <img 
+          src="https://cdn.auth0.com/quantum-assets/dist/latest/logos/auth0/auth0-lockup-en-ondark.png" 
+          alt="Auth0 Logo" 
+          class="auth0-logo"
+        />
+        <h1 class="main-title">251126 Demo</h1>
+        
+        <!-- Logged Out State -->
+        <div id="logged-out" class="action-card">
+          <p class="action-text">계정에 로그인하세요</p>
+          <button id="login-btn" class="button login">로그인</button>
+        </div>
+
+        <!-- Logged In State -->
+        <div id="logged-in" class="logged-in-section" style="display: none;">
+          <div class="logged-in-message">✅ 인증 성공!</div>
+          <h2 class="profile-section-title">내 프로필</h2>
+          <div id="profile" class="profile-card"></div>
+          <button id="logout-btn" class="button logout">로그아웃</button>
+        </div>
+      </div>
+      <!-- Metadata backdrop + panel -->
+      <div id="metadata-backdrop" style="display:none"></div>
+      <div id="metadata-panel" style="display:none">
+        <button id="close-metadata" class="button" style="float:right; margin-bottom:8px;">닫기</button>
+        <h3 style="margin-top:0.25rem">User object (for simple operations)</h3>
+        <pre id="user-object" class="metadata-pre">{}</pre>
+        <h3>ID token claims (use for custom claims like roles)</h3>
+        <pre id="idtoken-claims" class="metadata-pre">{}</pre>
+      </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
